@@ -10,30 +10,30 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-{
-    Schema::table('employees', function (Blueprint $table) {
-        $table->unsignedBigInteger('departemen_id')->after('tanggal_masuk');
-        $table->unsignedBigInteger('jabatan_id')->after('departemen_id');
+    {
+        Schema::table('employees', function (Blueprint $table) {
+            $table->unsignedBigInteger('departemen_id')->nullable()->after('tanggal_masuk');
+            $table->unsignedBigInteger('jabatan_id')->nullable()->after('departemen_id');
 
-        $table->foreign('departemen_id')
-              ->references('id')
-              ->on('departments') 
-              ->onDelete('cascade');
+            $table->foreign('departemen_id')
+                  ->references('id')
+                  ->on('departments')
+                  ->onDelete('set null');
 
-        $table->foreign('jabatan_id')
-              ->references('id')
-              ->on('positions')
-              ->onDelete('cascade');
-    });
-}
+            $table->foreign('jabatan_id')
+                  ->references('id')
+                  ->on('positions')
+                  ->onDelete('set null');
+        });
+    }
 
-public function down(): void
-{
-    Schema::table('employees', function (Blueprint $table) {
-        $table->dropForeign(['departemen_id']);
-        $table->dropForeign(['jabatan_id']);
-        $table->dropColumn(['departemen_id', 'jabatan_id']);
-    });
-}
 
+    public function down(): void
+    {
+        Schema::table('employees', function (Blueprint $table) {
+            $table->dropForeign(['departemen_id']);
+            $table->dropForeign(['jabatan_id']);
+            $table->dropColumn(['departemen_id', 'jabatan_id']);
+        });
+    }
 };

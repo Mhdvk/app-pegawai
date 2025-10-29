@@ -1,0 +1,98 @@
+.table-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.table-container h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.btn-add {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    background: #3498db;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.btn-add:hover {
+    background: #2980b9;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tr:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+
+.data-table tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+.actions {
+    text-align: center;
+}
+
+.btn-edit {
+    background: #f1c40f;
+    color: #fff;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 6px;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.btn-edit:hover {
+    background: #d4ac0d;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
